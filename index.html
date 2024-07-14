@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Kodam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cek Kodam</h1>
+        <form id="kodamForm">
+            <label for="kodamInput">Masukkan Nama:</label>
+            <input type="text" id="kodamInput" required>
+            <button type="submit">Cek</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+   <script>
+    document.getElementById('kodamForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('kodamInput').value.trim().toLowerCase();
+        const results = [
+            'manusia tiga',
+            'katak acumala',
+            'lada kuning',
+            'jamet',
+            'kuda laut',
+            'basis',
+            'gay',
+            'nigga',
+            'jarjit',
+            'sigma',
+            'lato-lato',
+            'tidak ada',
+            'panci ireng',
+            'tidak ada',
+            'kuda poni',
+            'meja',
+            'tidak ada',
+            'kuda poni',
+            'terong',
+            'garpu',
+            'tidak ada',
+            'tidak ada',
+            'sendok',
+            'ambasing',
+            'tidak ada',
+            'ambatukam',
+            'tidak ada',
+            'tidak ada',
+            'meme peri',
+            'tidak ada',
+            'ambacong'
+        ];
+
+        let randomResult;
+
+        // Memeriksa apakah nama ada dalam daftar results
+        if (results.includes(name)) {
+            randomResult = name; // Jika nama ada, maka Kodamnya adalah nama itu sendiri
+        } else {
+            // Jika nama tidak ada dalam daftar, pilih secara acak dari results yang ada
+            randomResult = results[Math.floor(Math.random() * results.length)];
+        }
+
+        document.getElementById('result').innerText = `Kodam ${name} adalah: ${randomResult}`;
+    });
+</script>
+
+</body>
+</html>
